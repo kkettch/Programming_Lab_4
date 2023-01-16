@@ -1,11 +1,11 @@
 import EverythingInanimate.*;
 import EvrythingAlive.*;
-import Exceptions.CitizenAnxietyLevelIsLowException;
+import Exceptions.TooMuchCitizensException;
 import Enum.*;
 import Exceptions.WitnessIsNotReadyException;
 
 public class Main {
-    public static void main(String[] args) throws CitizenAnxietyLevelIsLowException {
+    public static void main(String[] args) throws TooMuchCitizensException {
         Girl alice = new Girl("Алиса", Place.Dining) {
             public void run() {
                 this.setEmotion(Emotion.anxious);
@@ -13,10 +13,10 @@ public class Main {
             }
         };
 
-        OrdinaryCitizenOfWonderland fishDelicacy = new OrdinaryCitizenOfWonderland("Рыбный деликатес", Place.Dining, 0);
+        OrdinaryCitizenOfWonderland fishDelicacy = new OrdinaryCitizenOfWonderland("Рыбный деликатес", Place.Dining);
         fishDelicacy.setEmotion(Emotion.grumpy);
         fishDelicacy.getEmotion();
-        OrdinaryCitizenOfWonderland griffin = new OrdinaryCitizenOfWonderland("Грифон", Place.Dining, 0);
+        OrdinaryCitizenOfWonderland griffin = new OrdinaryCitizenOfWonderland("Грифон", Place.Dining);
         griffin.setEmotion(Emotion.offended);
         griffin.getEmotion();
         fishDelicacy.sing();
@@ -51,7 +51,7 @@ public class Main {
 
         jury1.writingOnTheSlate(slate);
 
-        WitnessToTheCrime hatter = new WitnessToTheCrime("Шляпник", Place.Court, 1);
+        WitnessToTheCrime hatter = new WitnessToTheCrime("Шляпник", Place.Court);
         hatter.putOnTheHandcuffs();
        try {
            hatter.goOutToGiveEvidence();
@@ -60,6 +60,7 @@ public class Main {
            System.out.println("Наручники надеты? " + hatter.isWitnesshandcuffed);
        }
 
-
+       king.kill_citizen_of_wonderland(hatter);
+       king.kill_citizen_of_wonderland(hatter);
     }
 }

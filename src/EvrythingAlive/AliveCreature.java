@@ -48,6 +48,7 @@ public abstract class AliveCreature implements EmotionalInfluencable {
 
     public void run() {
         foot.run();
+        this.setPlace(Place.InTheMiddleOfNowhere);
     }
 
     class Foot {

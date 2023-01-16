@@ -1,25 +1,26 @@
 package EvrythingAlive;
 
-import Exceptions.CitizenAnxietyLevelIsLowException;
-
+import Exceptions.TooMuchCitizensException;
+import java.util.ArrayList;
 import Enum.*;
 
 
 public class OrdinaryCitizenOfWonderland extends AliveCreature {
 
-    int anxietyLevel;
+    static ArrayList<String> citizens_names = new ArrayList<>();
 
-    public OrdinaryCitizenOfWonderland(String name, Place place, int anxietyLevel) throws CitizenAnxietyLevelIsLowException {
+    public OrdinaryCitizenOfWonderland(String name, Place place) throws TooMuchCitizensException {
         super(name, place);
-        Statistic.counter++;
 
         try {
-            if (anxietyLevel < 0) {
-                throw new CitizenAnxietyLevelIsLowException("Уровень тревоги отрицательный");
+            Statistic.counter++;
+            citizens_names.add(this.name);
+            if (Statistic.counter > 12) {
+                throw new TooMuchCitizensException("Жителей не должно быть больше 12!");
             }
-        } catch(CitizenAnxietyLevelIsLowException e) {
+        } catch (TooMuchCitizensException e) {
             System.out.println(e.getMessage());
-            System.out.println("Житель не может быть создан из-за неправильного значения уровня тревоги");
+            System.out.println("Сейчас жителей: " + Statistic.counter + ". Максимальное количество: 12");
         }
     }
 
@@ -40,6 +41,10 @@ public class OrdinaryCitizenOfWonderland extends AliveCreature {
         this.emotion = Emotion.sad;
         this.getEmotion();
         System.out.println(this.name + " поет песню про Рыбную Уху");
+    }
+
+    public static ArrayList<String> getCitizens_names() {
+        return citizens_names;
     }
 
 }

@@ -1,14 +1,14 @@
 package EvrythingAlive;
 import Enum.*;
 
-import Exceptions.CitizenAnxietyLevelIsLowException;
+import Exceptions.TooMuchCitizensException;
 import Exceptions.WitnessIsNotReadyException;
 
 public class WitnessToTheCrime extends OrdinaryCitizenOfWonderland{
     public boolean isWitnesshandcuffed;
 
-    public WitnessToTheCrime(String name, Place place, int anxietyLevel) throws CitizenAnxietyLevelIsLowException {
-        super(name, place, anxietyLevel);
+    public WitnessToTheCrime(String name, Place place) throws TooMuchCitizensException {
+        super(name, place);
     }
 
     public void putOnTheHandcuffs() {
