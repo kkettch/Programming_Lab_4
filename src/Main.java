@@ -1,8 +1,8 @@
-import EverythingInanimate.*;
-import EvrythingAlive.*;
-import Exceptions.TooMuchCitizensException;
-import Enum.*;
-import Exceptions.WitnessIsNotReadyException;
+import everythingInanimate.*;
+import everythingAlive.*;
+import exceptions.TooMuchCitizensException;
+import enums.*;
+import exceptions.WitnessIsNotReadyException;
 
 public class Main {
     public static void main(String[] args) throws TooMuchCitizensException {
@@ -35,8 +35,8 @@ public class Main {
         pie1.fillWithFilling();
         Pie pie2 = new Pie("Пирожок 2");
 
-        alice.eat();
-        alice.eat();
+        alice.eat(pie1);
+        alice.eat(pie2);
 
         Word word = new Word("Jury", true);
         alice.speak(word);
@@ -60,7 +60,7 @@ public class Main {
            System.out.println("Наручники надеты? " + hatter.isWitnesshandcuffed);
        }
 
-       king.kill_citizen_of_wonderland(hatter);
-       king.kill_citizen_of_wonderland(hatter);
+        king.kill_citizen_of_wonderland(hatter);
+        king.kill_citizen_of_wonderland(hatter);
     }
 }

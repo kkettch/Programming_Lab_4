@@ -1,7 +1,7 @@
-package EvrythingAlive;
-import Interfaces.*;
-import EverythingInanimate.*;
-import Enum.*;
+package everythingAlive;
+import interfaces.*;
+import everythingInanimate.*;
+import enums.*;
 
 public class Girl extends AliveCreature implements Speakable{
 

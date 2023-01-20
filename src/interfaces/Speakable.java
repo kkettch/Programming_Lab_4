@@ -1,5 +1,5 @@
-package Interfaces;
-import EverythingInanimate.*;
+package interfaces;
+import everythingInanimate.*;
 
 public interface Speakable {
     void speak(Word word);

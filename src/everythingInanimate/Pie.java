@@ -1,15 +1,13 @@
-package EverythingInanimate;
-
-import EvrythingAlive.AliveCreature;
+package everythingInanimate;
 
 import java.util.ArrayList;
 
 public class Pie {
     public String name;
-    static ArrayList<String> pies = new ArrayList<>();
+    static ArrayList<Pie> pies = new ArrayList<>();
     public Pie(String name) {
         this.name = name;
-        pies.add(name);
+        pies.add(this);
     }
     public static class Filling { //начинка
         private final String name;
@@ -24,7 +22,7 @@ public class Pie {
         System.out.println(this.name + " содержит в себе следующие ингридиенты: " + filling1.name + ", " + filling2.name);
     }
 
-    public static ArrayList<String> getPies() {
+    public static ArrayList<Pie> getPies() {
         return pies;
     }
 }

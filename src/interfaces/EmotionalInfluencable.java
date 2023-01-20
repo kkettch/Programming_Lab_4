@@ -1,5 +1,5 @@
-package Interfaces;
-import Enum.*;
+package interfaces;
+import enums.*;
 
 public interface EmotionalInfluencable {
     void setEmotion(Emotion emotion);

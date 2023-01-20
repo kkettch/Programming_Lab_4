@@ -1,8 +1,8 @@
-package EvrythingAlive;
+package everythingAlive;
 
 import java.util.ArrayList;
-import EverythingInanimate.*;
-import Enum.*;
+import everythingInanimate.*;
+import enums.*;
 
 public class Jury extends AliveCreature {
     static ArrayList<String> capacity_branch = new ArrayList<>();

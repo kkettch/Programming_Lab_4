@@ -1,4 +1,4 @@
-package EverythingInanimate;
+package everythingInanimate;
 
 public class Throne {
     public String name;

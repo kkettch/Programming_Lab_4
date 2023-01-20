@@ -1,8 +1,8 @@
-package EvrythingAlive;
-import Enum.*;
+package everythingAlive;
+import enums.*;
 
-import Exceptions.TooMuchCitizensException;
-import Exceptions.WitnessIsNotReadyException;
+import exceptions.TooMuchCitizensException;
+import exceptions.WitnessIsNotReadyException;
 
 public class WitnessToTheCrime extends OrdinaryCitizenOfWonderland{
     public boolean isWitnesshandcuffed;

@@ -1,11 +1,11 @@
-package EvrythingAlive;
-import EverythingInanimate.*;
+package everythingAlive;
+import everythingInanimate.*;
 
 import java.util.ArrayList;
-import Enum.*;
+import enums.*;
 
 public class Royalty extends AliveCreature {
-    static ArrayList<String> citizens = new ArrayList<>();
+    static ArrayList<OrdinaryCitizenOfWonderland> citizens = new ArrayList<>();
     static ArrayList<String> capacity_throne = new ArrayList<>();
     public Royalty(String name, Place place) {
         super(name, place);
@@ -32,9 +32,9 @@ public class Royalty extends AliveCreature {
         }
         Security security = new Security("Охранник");
         citizens = OrdinaryCitizenOfWonderland.getCitizens_names();
-        if (citizens.contains(citizenOfWonderland.name)) {
+        if (citizens.contains(citizenOfWonderland)) {
             System.out.println(security.name + " убивает жителя страны чудес по имени: " + citizenOfWonderland.name + ". Его приказал убить: " + this.name);
-            citizens.remove(citizenOfWonderland.name);
+            citizens.remove(citizenOfWonderland);
         } else {
             System.out.println("Вы не можете убить жителя: " + citizenOfWonderland.name + ". Такого жителя нет! Вероятно он уже убит");
         }

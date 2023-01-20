@@ -1,20 +1,20 @@
-package EvrythingAlive;
+package everythingAlive;
 
-import Exceptions.TooMuchCitizensException;
+import exceptions.TooMuchCitizensException;
 import java.util.ArrayList;
-import Enum.*;
+import enums.*;
 
 
 public class OrdinaryCitizenOfWonderland extends AliveCreature {
 
-    static ArrayList<String> citizens_names = new ArrayList<>();
+    static ArrayList<OrdinaryCitizenOfWonderland> citizens_names = new ArrayList<>();
 
     public OrdinaryCitizenOfWonderland(String name, Place place) throws TooMuchCitizensException {
         super(name, place);
 
         try {
             Statistic.counter++;
-            citizens_names.add(this.name);
+            citizens_names.add(this);
             if (Statistic.counter > 12) {
                 throw new TooMuchCitizensException("Жителей не должно быть больше 12!");
             }
@@ -43,7 +43,7 @@ public class OrdinaryCitizenOfWonderland extends AliveCreature {
         System.out.println(this.name + " поет песню про Рыбную Уху");
     }
 
-    public static ArrayList<String> getCitizens_names() {
+    public static ArrayList<OrdinaryCitizenOfWonderland> getCitizens_names() {
         return citizens_names;
     }
 

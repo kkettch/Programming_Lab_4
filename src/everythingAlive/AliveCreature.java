@@ -1,7 +1,7 @@
-package EvrythingAlive;
-import Enum.*;
-import Interfaces.*;
-import EverythingInanimate.*;
+package everythingAlive;
+import enums.*;
+import interfaces.*;
+import everythingInanimate.*;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public abstract class AliveCreature implements EmotionalInfluencable {
     protected int iq_level;
     protected Emotion emotion = Emotion.normal;
     private final Foot foot = new Foot();
-    static ArrayList<String> amount_of_pies = new ArrayList<>();
+    public ArrayList<Pie> amountOfPies = new ArrayList<>();
 
     AliveCreature(String name, Place place) {
         this.name = name;
@@ -35,14 +35,14 @@ public abstract class AliveCreature implements EmotionalInfluencable {
         System.out.println(this.name + " has an emotion: " + this.emotion);
     }
 
-    public void eat() {
-        amount_of_pies = Pie.getPies();
-        System.out.println("На тарелке лежит " + amount_of_pies.size() + " пирожков");
-        if (amount_of_pies.size() == 0) {
-            System.out.println(this.name + " не может съесть ни одного. Их больше нет");
+    public void eat(Pie pie) {
+        amountOfPies = Pie.getPies();
+        System.out.println("На тарелке лежит " + amountOfPies.size() + " пирожков");
+        if (amountOfPies.contains(pie)) {
+            Pie.getPies().remove(pie);
+            System.out.println(this.name + " съел(-а) пирожок. Осталось еще: " + amountOfPies.size());
         } else {
-            Pie.getPies().remove(0);
-            System.out.println(this.name + " съел(-а) пирожок. Осталось еще: " + amount_of_pies.size());
+            System.out.println(this.name + " не может съесть этот пирожок. Его больше нет");
         }
     }
 

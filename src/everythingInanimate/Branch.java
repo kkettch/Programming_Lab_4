@@ -1,4 +1,4 @@
-package EverythingInanimate;
+package everythingInanimate;
 
 import java.util.Objects;
 
